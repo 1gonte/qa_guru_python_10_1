@@ -16,4 +16,5 @@ def test_selene(settings):
 def test_empty_google(settings):
     browser.open('https://google.com')
     browser.element('[name="q"]').should(be.blank).type('usidhuadsjfnasoiphdvpoas').press_enter()
-    browser.element('[id="botstuff"]').should(have.text('ничего не найдено'))
+    browser.element('[id="center_col"]').should(have.text('По запросу usidhuadsjfnasoiphdvpoas ничего не найдено.'))
+
