@@ -4,7 +4,10 @@ from selene import browser, be, have
 
 @pytest.fixture
 def settings():
-    browser.driver.set_window_size(500, 500)
+    browser.config.window_width = 500
+    browser.config.window_height = 500
+    yield
+    browser.quit()
 
 
 def test_selene(settings):
